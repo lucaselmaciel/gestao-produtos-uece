@@ -1,0 +1,88 @@
+h1 {
+    color: rgb(0, 0, 0);
+}
+
+.container{
+    padding: 0;
+}
+
+.navbar-brand{
+    font-weight: bold;
+}
+
+/*Botão Adicionar*/
+
+.add-div{
+    display: inline-block;
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 25px;
+    color: white;
+    background-color: rgb(70, 70, 206);
+    border-radius: 5px;
+}
+
+.fas.fa-plus{
+    color: white;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.fas.fa-search{
+    position: absolute;
+    top: 12px;
+    right: 26px;
+}
+
+.search-div{
+    padding: 0px;
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.task-list{
+    padding-left: 0;
+}
+
+.task-item{
+    list-style: none;
+    height: 50px;
+    padding-top: 10px;
+    border: 1px dashed white;
+}
+
+.fas.fa-edit, .fas.fa-trash{
+    cursor: pointer;
+    margin: 5px;
+    font-size: 20px;
+    float: right;
+}
+
+.fas.fa-edit{
+    color: rgb(148, 185, 73);
+}
+
+.fas.fa-trash{
+    color: rgb(190, 10, 10);
+}
+
+footer{
+    background-color: rgb(43, 43, 43);
+    height: 300px;
+    padding-top: 20px;
+}
+
+footer p{
+    color: white;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    top: 50%;
+}
+
+.add{
+    text-decoration: none;
+    text-underline-offset: none;
+    color: white;
+}

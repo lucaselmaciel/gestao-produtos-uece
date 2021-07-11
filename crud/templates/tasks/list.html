@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Página principal{% endblock %}
+
+{% block content %}
+
+<div class="offset-1 col-10 list-div">
+    <h1>Lista</h1>
+    <a href="/cadastro" class="add"><div class="col-2 add-div">
+       <i class="fas fa-plus"></i> Adicionar Produto
+    </div></a> 
+    <div class="col-9 search-div">
+        <input class="form-control" type="text" id="search" name="search" placeholder="Digite sua busca">
+        <i class="fas fa-search"></i>
+    </div>
+    <ul class="task-list">
+        {% for task in tasks %}
+        <li class="task-item">
+            <span><a href="/conteudo/{{task.id}}">{{task.nome}}</a></span>
+            <span><a href="delete/{{task.id}}"><i class="fas fa-trash"></i></a></span>
+            <a href="update/{{task.id}}"><span><i class="fas fa-edit"></i></span></a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

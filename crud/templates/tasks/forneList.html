@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Página principal{% endblock %}
+
+{% block content %}
+
+<div class="offset-1 col-10 list-div">
+    <h1>Lista</h1>
+    <a href="/cadastro-forne" class="add"><div class="col-2 add-div">
+       <i class="fas fa-plus"></i> Adicionar Fornecedor
+    </div></a> 
+    <div class="col-9 search-div">
+        <input class="form-control" type="text" id="search" name="search" placeholder="Digite sua busca">
+        <i class="fas fa-search"></i>
+    </div>
+    <ul class="task-list">
+        {% for forne in fornecedores %}
+        <li class="task-item">
+            <span><a href="/conteudoForne/{{forne.id}}">{{forne.nome}}</a></span>
+            <span><a href="deleteForne/{{forne.id}}"><i class="fas fa-trash"></i></a></span>
+            <a href="updateForne/{{forne.id}}"><span><i class="fas fa-edit"></i></span></a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

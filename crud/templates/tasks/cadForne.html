@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Página fornecedores{% endblock %}
+
+{% block content %}
+<h1>Cadastro fornecedores</h1>
+{% bootstrap_messages %}
+<form action="{% url 'cadastro-forne' %}" method="POST" class="form" autocomplete="off" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+{% bootstrap_form form %}
+{% buttons %}
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+{% endbuttons %}
+</form>
+{% endblock %}

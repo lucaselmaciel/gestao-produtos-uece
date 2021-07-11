@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block title %}Conteudo{% endblock %}
+
+{% block content %}
+<h1>{{fornecedor.nome}}</h1>
+<span>CEP: {{ fornecedor.cep }}</span>
+
+{% endblock %}
