@@ -5,9 +5,25 @@
 {% block content %}
 <h1>{{fornecedor.nome}}</h1>
 <span>CEP: {{ fornecedor.cep }}</span><br>
+{% if endereco.logradouro %}
 <span>Logradouro: {{ endereco.logradouro }}</span><br>
+{% else %}
+<span>Logradouro: ------ </span><br>
+{% endif %}
+{% if endereco.bairro %}
 <span>Bairro: {{ endereco.bairro }}</span><br>
-<span>Localidade: {{ endereco.localidade }}</span><br>
+{% else %}
+<span>Bairro: ------ </span><br>
+{% endif %}
+{% if endereco.localidade %}
+<span>Cidade: {{ endereco.localidade }}</span><br>
+{% else %}
+<span>Cidade: ------ </span><br>
+{% endif %}
+{% if endereco.uf %}
 <span>Estado: {{ endereco.uf }}</span><br>
+{% else %}
+<span>Estado: ------ </span><br>
+{% endif %}
 
 {% endblock %}
