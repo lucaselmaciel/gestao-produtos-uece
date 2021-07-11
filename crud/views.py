@@ -4,6 +4,7 @@ from django.core.paginator import Paginator
 from .forms import CadastroModelForm, CadastroFornecedoresForm, RegistroVendaForm
 from .models import CadastroProdutos, Fornecedores, VendaProduto
 from django.contrib import messages
+import requests
 
 
 # Create your views here.
@@ -76,8 +77,14 @@ def fornecedoresList(request):
     return render(request, 'tasks/forneList.html', context)
 def conteudoForn(request, id):
     fornecedor = get_object_or_404(Fornecedores, pk=id)
+    try:  
+        endereco = requests.get(f'https://viacep.com.br/ws/{fornecedor.cep}/json/')
+        endereco = endereco.json()
+    except Exception as exp:
+        endereco = 'CEP inválido'
     context = {
         'fornecedor': fornecedor,
+        'endereco' : endereco,
     }
     return render(request, 'tasks/conteudoForne.html', context)
 def cadastroForn(request):

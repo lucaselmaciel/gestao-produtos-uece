@@ -4,6 +4,10 @@
 
 {% block content %}
 <h1>{{fornecedor.nome}}</h1>
-<span>CEP: {{ fornecedor.cep }}</span>
+<span>CEP: {{ fornecedor.cep }}</span><br>
+<span>Logradouro: {{ endereco.logradouro }}</span><br>
+<span>Bairro: {{ endereco.bairro }}</span><br>
+<span>Localidade: {{ endereco.localidade }}</span><br>
+<span>Estado: {{ endereco.uf }}</span><br>
 
 {% endblock %}
